@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .logo{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+    
+
+        .nav-container{
+            max-width:1400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .navlink{
+            display: flex;
+            gap: 5rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: large;
+            font-weight: 600;
+        }
+
+        .navlink a:hover{
+            color: orange;
+        }
+
+        .heading{
+            margin-top: 50px;
+        }
+
+        .card-container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .card{
+     height: 310px;
+     width: 200px;
+     border-radius: 0.5rem;
+     padding: 1rem;
+     margin-left: 1.5rem;
+     margin-top: 1rem;
+    }
+
+    p{
+        font-weight: 600;
+    }
+
+.card p i{
+    color: green;
+}
+
+    .card:hover{
+        background-color: orange;
+    }
+
+    .card img{
+        height: 200px;
+        width: 200px;
+        border-radius: 6px;
+    }
+
+    .card img:hover{
+        transform: scale(1.5);
+
+    }
+
+
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    .button-container{
+        display: flex;
+        justify-content: center;
+        gap: 7rem;
+        margin-top: 50px;
+    }
+
+    .button{
+        border: 2px solid black;
+        border-radius: 10px;
+        height: 20px;
+        padding: 0px 8px;
+    }
+
+    .button:hover{
+        background-color: orange;
+    }
+
+    .option-container{
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .option{
+        border: 2px solid black;
+        border-radius: 7px;
+        padding: 0px 10px;
+        padding: 16px;
+        height: 47px;
+        width: 140px;
+        text-align: center;
+    }
+
+    .option:hover{
+        background-color: orange;
+    }
+
+       .footer-container{
+            display: flex;
+            align-items:flex-start;
+            justify-content: space-between;
+            padding: 0px 28px;
+            flex-wrap: wrap;
+        }
+
+        .hed{
+            font-size: x-large;
+            font-weight: 600;
+        }
+
+         .swiggy-image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 200px;
+         }
+
+    .link-column{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 600;
+    padding: 100px;
+    gap: 20px;
+}
+
+
+
+    
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="data:image/webp;base64,UklGRqQEAABXRUJQVlA4WAoAAAAQAAAANwAANwAAQUxQSBMCAAARkATbtmk7tX9s27Zt27adtO3k2zZ6sW3btm373nfObtyDu0/YjIgJgP+umSu16NilcXHDMuRu7Hvm/bcf379/uhtT16Ac7VIeMZS/TatgSpngJxzVf4TnMKLC0u+ofyKjAdX3MHTzTCGykmt/orv7qXL4MXQ7gqj7Y1R/9FEBa5Gk24uas0NVLpC0+aJTt4OlgIUIMgWg5vfiLX6qzCMouk/nc7E2TOUaQZW7Om8LNf+qgrXca/daq3gDS8Uu496w9zp2iRL3FR5MAvcnftB5XzDLoAVLvMOj5vWonh8oR7/VeVkNsqcDEzs84xp8y6LoUG//iMjAxX3ykVQ8rYOenz84R+HXy9kJCq5kOuq8JUHO6TYFTiVI1+4TyXgCKHzJIvCUpoDQnwS3gbTBLYJwmiyBHte+1qWBWg+ZWzuyE0HwK8YY55x5GFf60g+oi4+NWRYXH5cQGxu74sA9hb25yQAyZM6UMWvO7Dmy5iuTxCRWPzAxQ9UGXQb1b1u5QI5gLjmY04Ri3vffW/bnry9nFo2yRZ97gIlFV9goXFosRJKS3giY4BFtKrCEC55UBjPzrhetLuwt8k5nCDR+Jdjd8xg6zxcGY/2448Vdy/GuBZhb4JIDOTqDwOQurx3CfXmMgoVcxG9UAbPzruOCl/XA9LovBdPAeK8QjoibM5oH2fdyvFoCfsUSyzc0gF8zXwH4lwcAVlA4IGoCAADQEACdASo4ADgAPjEKjEYiEREMeCADBLYAYoiAHVWVa7JxnfAPe/8WsX7xm/272LeIbuAP15/YD2ZvUB6AH6tdZh6AH7VeqN/jf2T+Bz9s/2u9mv//k3YNUAYNZeR0T1OYj9Q93rkqrGtLrgtFbeaFQToyr2upIuwiRPuFLS/V5Pk/aPpPTFKwgFD1A9MOAAD+9BjB15WJ0VNYunSIsvnjQPLUqH9/rUzRt//rn4qFSAIbN/P3H4jn3HKpXpyKAm3j9tcPXAse9YecZwa1SoOvBGQKScs+XJQvYfIeMtx+vdePVbn8W9dtWkcxOSuno9VfYZN7lSUplYWHE1qhmrhfXNjugXsaZLQ8tvcQeHmFHmVoadRrhfLTM157ZbF7LOsA3TOP1gfcNTO4nM6vUr7Zx3q90pvCLOhy1w9cD7vCYtfJafaQq1prRjULz+Ju8WJnleEbIRtmGd/Q+O2G2a5OUwmeEDxulzrdiaNCoVlBeZcHgcZV6Pc4OYjx43H2PF9LeNgwzAvBKqMnHM0w0GLYmk5yfXaKyXJuEMFSpga04goH5//XwCSEFh0qE5ysc1kN8UorVdQSuDHi+Mrixv2pixXHB+qW9nZzuYGR9v6J8Hz937eV6bnG/2wvO7q4arKbJFY8X/+GtMB6JFBQ7QAGpmvPS/fToInj/SY3glC940gy43EFdvCHd2X4+Hl/Jz+i8su9CiTpKP9dfO874nkl/ZsXjU9N6//Brh0nhkts7vrvOaQCP8NQYsmieM/S1OZQ1OyYaZLMcs/R3RzP/IY+OvxlnvcdwjI8U06UjDGYqumcXdJRYtV3QAA=">
+                    <span class="logo-text">Swiggy</span>
+                </a>
+
+                <div class="navlink">
+                    <a href="#" class="icon"><span class="swiggycorporate">Swiggy corporate</span><i class="fa-solid fa-briefcase"></i></a>  
+                    <a href="#" class="icon"><span class="search">Search</span><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#" class="new"><span class="offers">Offers</span><sup style="color: orange;">NEW</sup> <i class="fa-solid fa-percent"></i></a>
+                    <a href="#" class="icon"><span class="help">Help</span> <i class="fa-solid fa-life-ring"></i></a>
+                    <a href="#" class="icon"><span class="signin">Sign in</span> <i class="fa-regular fa-user"></i></a>
+                    <a href="#" class="icon"><span class="cart">Cart</span> <i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="containt">
+            <hr>
+            <h2 class="heading">Top restaurant chains in Chhindwara</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/gp1ityra6utvzqn6ghnv" alt="">
+                    <p >Adil Hotel</p>
+                    <p><i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, Biryani, Tandoor</p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mt2aggiscfl3yviatwng" alt="">
+                    <p>Bakery World</p>
+                    <p><i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>Bakery, Ice Creams, snacks, 
+                        Parsia Road
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/5116a385bac0548e06c33c08350fbf11" alt="">
+                    <p>The Belgain Wafel co.</p>
+                    <p>  <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>Wafel, Dessert, Ice cream,
+                        Mohan Nagar
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThBLcVYHjQMCV8X06I6H46n5UHNsAAL62Uqw&s" alt="">
+                    <p>Dav International</p>
+                    <p><i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, Chinese, Fast food, Mohan Nagar </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThBLcVYHjQMCV8X06I6H46n5UHNsAAL62Uqw&s" alt="">
+                    <p>Dav International</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, Chinese, Fast food, Mohan Nagar </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThBLcVYHjQMCV8X06I6H46n5UHNsAAL62Uqw&s" alt="">
+                    <p>Dav International</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, Chinese, Fast food, Mohan Nagar </p>
+                </div>
+            </div>
+            
+            <hr>
+            <h2 class="heading">Restaurants with online food delivery in Chhindwara</h2>
+            
+            <div class="button-container">
+                <div class="button">
+                    <a href="#" class="filter">Filter</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="sortby">Sort by</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="rating4.0+">Rating 4.0+</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="pureveg">Pure veg</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="offers">Offers</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="rs300-600">Rs. 300-600</a>
+                </div>
+
+                <div class="button">
+                    <a href="#" class="lessthen300">Less then 300</a>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/21/dbe91f1f-b400-4f4b-a78d-c6b99bdc61c5_912754.JPG" alt="">
+                    <p>Urban Cafe</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>Snacks, pizza, pasta, Fast food,
+                        Chhindwara City </p>
+                </div>
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/eohdm5sdnq6e2u46xeux" alt="">
+                    <p>Raimens Cafe 79</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>Bakery, pizza, Snacks, Baverages,
+                        VIP Road
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/rvxp5xbniat84r6efku2" alt="">
+                    <p>Satkar Resturent</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+                
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/sidigb8zqjfrfpkrtqgl" alt="">
+                    <p>Apni Rasoi Family Dhaba</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p> Indian, North Indian, South Indian,
+                      Parasia Road </p>
+                </div>
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/je6qlse8csxgcfpuoybe" alt="">
+                    <p>Blue Chilli Resturent</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Parasia Road </p>
+                </div>
+                
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+            </div>
+
+            
+            <div class="card-container">
+                <div class="card">
+                    <img src="" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+
+                <div class="card">
+                    <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ofjn39gnpkzhkllfishc" alt="">
+                    <p>Shree Balaji Chinese Center</p>
+                    <p> <i class="fa-solid fa-star"></i>Rating 4.3, 45-50 mins</p>
+                    <p>North Indian, South Indian,
+                      Satkar Chowk </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h2 class="heading">Best Places to Eat Across Cities</h2>
+
+        <div class="option-container">
+
+            <div class="option">
+            <a href="#" class="BestResturentinBangalore">Best Resturent in Bangalore</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinpune">Best Resturent in Pune</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinmumbai">Best Resturent in Mumbai</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinhyedrabad">Best Resturent in Hyedrabad</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinkolkata">Best reaturent in Kolkata</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinchennai">Best Resturent in Chennai</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinchandighar">Best Resturent in Chandighar</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinahamdabad">Best Resturent in Ahamdabad</a>
+            </div>
+
+
+            <div class="option">
+                <a href="#" class="bestresturentinjaipur">Best Resturent in Jaipur</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bestresturentinnagpur">Best Resturent in Nagpur</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="more">More<i class="fa-solid fa-caret-down"></i></a>
+            </div>
+        </div>
+
+        <hr>
+        <h2  class="heading">Best Cuisines Near Me</h2>
+
+        <div class="option-container">
+
+            <div class="option">
+            <a href="#" class="Chineseresturentnearme">Chinese Resturent Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="southindianresturentnearme">South Indian Restaurants Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="kerlaresturentnearme">Kerala Restaurant Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="koreanresturentnraeme">Korean Resturent Nearme</a> 
+            </div>
+
+            <div class="option">
+                <a href="#" class="northindianresturentnearme">North Indian Restaurant Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="seafoodresturentnearme">Sea Food Resturent Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="bengalifoodresturentnearme">Bengali Resturent Near</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="panjabiresturentnearme">Panjabi Restaurant Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="itailianresturentnearme">Italian Restaurant Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="andhraresturentnearme">Andhra Restaurant Nearme</a>
+            </div>
+
+            <div class="option">
+                <a href="#" class="more">More<i class="fa-solid fa-caret-down"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+       <a href="#" class="swiggy-image">
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb9tbetGkd0-WiWKXHyMHq2D4pGBAKxTvY2g&s">
+        <span>&#169 2024 Swiggy Limited</span>
+       </a>
+
+        <div class="link-column">
+            <h4 class="hed">Company</h4>
+            <a href="#" class="aboutus">About us</a>
+            <a href="#" class="swiggycorporate">Swiggy Corporate</a>
+            <a href="#" class="careers">Careers</a>
+            <a href="#" class="teams">Teams</a>
+            <a href="#" class="swiggyone">Swiggy One</a>
+            <a href="#" class="swiggyinstamart">Swiggy Instamart</a>
+            <a href="#" class="swiggydineout">Swiggy Dineout</a>
+            <a href="#" class="swiggygenie">Swiggy Genie</a>
+        </div>
+
+        <div class="link-column">
+            <h4 class="hed">Contact Us</h4>
+            <a href="#" class="help&support">Help & Support</a>
+            <a href="#" class="partnerwithus">Partner With Us</a>
+            <a href="#" class="ridewithus">Ride With us</a>
+        </div>
+
+        <div class="link-column">
+            <h4 class="hed">Available In</h4>
+            <a href="#" class="bangalore">Bangalore</a>
+            <a href="#" class="gurgaon">Gurgaon</a>
+            <a href="#" class="mumbai">Mumbai</a>
+            <a href="#" class="hyedrabad">Hyedrabad</a>
+            <a href="#" class="delhi">Delhi</a>
+            <a href="#" class="pune">Pune</a>
+        </div>
+
+        <div class="link-column">
+            <h4 class="hed">Life at Swiggy</h4>
+            <a href="#" class="exploreinswiggy">Explore in Swiggy </a>
+            <a href="#" class="swiggynews">Swiggy News</a>
+            <a href="#" class="snackable">Snackable</a>
+        </div>
+
+        <div class="link-column">
+            <h4 class="hed">Legal</h4>
+            <a href="#" class="terms&condition">Terms & Conditions</a>
+            <a href="#" class="cookiepolicy">Cookie Policy</a>
+            <a href="#" class="privacypolicy">Privicy Policy</a>
+            <a href="#" class="investorrelation">Investor Relation</a>
+        </div>
+
+        <div class="link-column">
+            <h4 class="hed">Social Link</h4>
+            <a href="#" class="linkedin">Linkedin <i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="instagram">Instatram <i class="fa-brands fa-instagram"></i></i></a>
+            <a href="#" class="facebook">facebook <i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="pinterest">Pinterest <i class="fa-brands fa-pinterest"></i></a>
+            <a href="#" class="twitter">Twitter <i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>  
+</body>
+</html>
